@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengguna - KEMENKUM SULSEL</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+  <nav>
+    <div class="logo-name">
+      <div class="logo-image">
+        <img src="images/LOGO KEMENKUM.jpeg" alt="">
+      </div>
+      <span class="logo_name">KEMENKUM SULSEL</span>
+    </div>
+    <div class="menu-items">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="uil uil-estate"></i><span class="link-name">Dashboard</span></a></li>
+        <li><a href="input-berita.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Berita</span></a></li>
+        <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
+        <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
+        <li><a href="pengguna.html" class="active"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
+      </ul>
+      <ul class="logout-mode">
+        <li><a href="#"><i class="uil uil-signout"></i><span class="link-name">Logout</span></a></li>
+        <li class="mode">
+          <a href="#"><i class="uil uil-moon"></i><span class="link-name">Dark Mode</span></a>
+          <div class="mode-toggle"><span class="switch"></span></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="dashboard">
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+      <div class="search-box">
+        <i class="uil uil-search"></i>
+        <input type="text" placeholder="Search here...">
+      </div>
+      <img src="images/user.jpg" alt="">
+    </div>
+
+    <div class="dash-content">
+      <div class="overview">
+        <div class="title">
+          <i class="uil uil-users-alt"></i>
+          <span class="text">Manajemen Pengguna</span>
+        </div>
+        <!-- Tabel Pengguna -->
+        <table border="1" cellpadding="10" style="margin-top:20px; border-collapse:collapse; width:100%;">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Username</th>
+              <th>Role</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Admin</td><td>admin01</td><td>Admin</td>
+              <td><button>Edit</button> <button>Hapus</button></td></tr>
+          </tbody>
+        </table>
+        <button style="margin-top:15px; padding:10px 20px;">Tambah Pengguna</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

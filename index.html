@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Dashboard | Kemenkum Sulsel</title> 
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="images/LOGO KEMENKUM.jpeg" alt="Logo Kemenkum">
+            </div>
+            <span class="logo_name">KEMENKUM SULSEL</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="input-berita.html">
+                    <i class="uil uil-file-plus"></i>
+                    <span class="link-name">Input Berita</span>
+                </a></li>
+                <li><a href="rekap-berita.html">
+                    <i class="uil uil-database"></i>
+                    <span class="link-name">Rekap Berita</span>
+                </a></li>
+                <li><a href="arsip.html">
+                    <i class="uil uil-archive"></i>
+                    <span class="link-name">Arsip</span>
+                </a></li>
+                <li><a href="pengguna.html">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Pengguna</span>
+                </a></li>
+            </ul>
+
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <!-- <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Cari berita...">
+            </div> -->
+            
+            <img src="images/user.jpg" alt="Profile">
+        </div>
+
+        <div class="dash-content">
+            <!-- Statistik -->
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Dashboard</span>
+                </div>
+
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class="uil uil-newspaper"></i>
+                        <span class="text">Berita Hari Ini</span>
+                        <span class="number">12</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-calendar-alt"></i>
+                        <span class="text">Total Bulan Ini</span>
+                        <span class="number">85</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-archive"></i>
+                        <span class="text">Arsip Berita</span>
+                        <span class="number">1,230</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daftar Berita Terbaru -->
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Berita Terbaru</span>
+                </div>
+
+                <div class="activity-data">
+                    <div class="data title-news">
+                        <span class="data-title">Judul Berita</span>
+                        <span class="data-list">Kakanwil Kemenkum Sulsel Pimpin Rapat</span>
+                        <span class="data-list">Sosialisasi Reformasi Birokrasi</span>
+                        <span class="data-list">Pembentukan Panitia Qurban 2026</span>
+                        <span class="data-list">Pelatihan CPNS Angkatan 2025</span>
+                    </div>
+                    <div class="data date">
+                        <span class="data-title">Tanggal</span>
+                        <span class="data-list">2025-08-29</span>
+                        <span class="data-list">2025-08-28</span>
+                        <span class="data-list">2025-08-27</span>
+                        <span class="data-list">2025-08-25</span>
+                    </div>
+                    <div class="data author">
+                        <span class="data-title">Penulis</span>
+                        <span class="data-list">Admin</span>
+                        <span class="data-list">Admin</span>
+                        <span class="data-list">Humas</span>
+                        <span class="data-list">Admin</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Status</span>
+                        <span class="data-list">Published</span>
+                        <span class="data-list">Published</span>
+                        <span class="data-list">Draft</span>
+                        <span class="data-list">Published</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

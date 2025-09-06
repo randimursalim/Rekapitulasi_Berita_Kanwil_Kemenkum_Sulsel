@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekap Berita - KEMENKUM SULSEL</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <!-- Chart.js & Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav>
+    <div class="logo-name">
+      <div class="logo-image">
+        <img src="images/LOGO KEMENKUM.jpeg" alt="Logo Kemenkum">
+      </div>
+      <span class="logo_name">KEMENKUM SULSEL</span>
+    </div>
+
+    <div class="menu-items">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="uil uil-estate"></i><span class="link-name">Dashboard</span></a></li>
+        <li><a href="input-berita.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Berita</span></a></li>
+        <li><a href="rekap-berita.html" class="active"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
+        <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
+        <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
+      </ul>
+
+      <ul class="logout-mode">
+        <li><a href="#"><i class="uil uil-signout"></i><span class="link-name">Logout</span></a></li>
+        <li class="mode">
+          <a href="#"><i class="uil uil-moon"></i><span class="link-name">Dark Mode</span></a>
+          <div class="mode-toggle"><span class="switch"></span></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <section class="dashboard">
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+      <img src="images/user.jpg" alt="User Profile">
+    </div>
+
+    <div class="dash-content">
+      <!-- Judul -->
+      <div class="title">
+        <i class="uil uil-chart"></i>
+        <span class="text">Rekap Berita</span>
+      </div>
+
+      <!-- Filter -->
+      <div class="form-container">
+        <div class="filters" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+          <button class="filter-btn" data-filter="daily">Harian</button>
+          <button class="filter-btn" data-filter="weekly">Mingguan</button>
+          <button class="filter-btn" data-filter="monthly">Bulanan</button>
+          <button class="filter-btn" data-filter="yearly">Tahunan</button>
+          <input type="date" id="start-date"> 
+          <span>-</span>
+          <input type="date" id="end-date">
+          <button id="apply-range">Terapkan</button>
+        </div>
+      </div>
+
+      <!-- Grafik -->
+      <div class="activity">
+        <div class="activity-data" style="flex-direction: column; width: 100%;">
+          <div class="form-container" style="width:100%; max-width:900px; margin:auto;">
+            <h3 style="text-align:center; margin-bottom:20px;">Jumlah Berita</h3>
+            <canvas id="rekapChart"></canvas>
+            <div style="text-align:center; margin-top:20px;">
+              <button id="downloadJPG" class="btn-simpan">Download JPG</button>
+              <button id="downloadPDF" class="btn-simpan">Download PDF</button>
+            </div>
+            <div id="totalBerita" style="margin-top:20px; font-weight:bold; font-size:16px; text-align:center;">
+              Total Berita: 0
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ringkasan Tabel (opsional kalau mau ditampilkan lagi) -->
+      <!--
+      <div class="activity">
+        <div class="title">
+          <i class="uil uil-list-ul"></i>
+          <span class="text">Ringkasan Data</span>
+        </div>
+        <table border="1" cellpadding="10" style="margin-top:10px; border-collapse:collapse; width:100%;">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Jumlah Berita</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2025-08-25</td><td>5</td></tr>
+            <tr><td>2025-08-26</td><td>7</td></tr>
+            <tr><td>2025-08-27</td><td>4</td></tr>
+            <tr><td>2025-08-28</td><td>6</td></tr>
+            <tr><td>2025-08-29</td><td>3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <script src="rekap.js"></script>
+</body>
+</html>

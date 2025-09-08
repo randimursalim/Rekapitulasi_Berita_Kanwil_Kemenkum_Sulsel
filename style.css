@@ -378,19 +378,22 @@ nav.close ~ .dashboard .top{
   margin-top: 20px;
 }
 
-.input-berita-form .form-group {
+.input-berita-form .form-group,
+.edit-berita-form .form-group {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
 
-.input-berita-form label {
+.input-berita-form label,
+.edit-berita-form label {
   font-weight: 600;
   margin-bottom: 5px;
   color: var(--text-color);
 }
 
-.input-berita-form input {
+.input-berita-form input,
+.edit-berita-form input {
   padding: 10px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -398,7 +401,8 @@ nav.close ~ .dashboard .top{
   color: var(--text-color);
 }
 
-.btn-simpan {
+.btn-simpan,
+.btn-batal {
   background: var(--primary-color);
   color: #fff;
   padding: 10px 20px;
@@ -408,22 +412,26 @@ nav.close ~ .dashboard .top{
   font-weight: 600;
 }
 
-.btn-simpan:hover {
+.btn-simpan:hover,
+.btn-batal:hover {
   background:   #0077ff;
   color: #fff;
 }
 
-.input-berita-form input::placeholder {
+.input-berita-form input::placeholder,
+.edit-berita-form input::placeholder {
   color: #9ca3af; /* placeholder agak abu2 biar tidak ganggu */
 }
 
-body.dark .input-berita-form input {
+body.dark .input-berita-form input,
+body.dark .edit-berita-form input {
   background: var(--panel-color-light); /* ini akan pakai versi gelap */
   color: var(--text-color);
   border: 1px solid var(--border-color);
 }
 
-body.dark .btn-simpan:hover {
+body.dark .btn-simpan:hover,
+body.dark .btn-batal:hover {
   background: var(--primary-color-light);
 }
 
@@ -642,21 +650,53 @@ body.dark #endDate:hover {
     font-weight: 600;
 }
 
-
-
 /* Mode gelap override */
 body.dark-mode .pagination button,
 body.dark-mode .pagination button.active {
     color: #fff; /* tulisan putih saat dark mode */
 }
 
-
-
 body.dark .btn-action-aksi:hover {
     background: rgba(255,255,255,0.1);
 }
 
 /* Akhir Arsip Berita */
+
+/* Awal Pengguna */
+/* Styling dasar select agar selaras */
+.form-group select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--panel-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Saat hover di dropdown itu sendiri */
+.form-group select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Untuk option (⚠️ hanya didukung di sebagian browser modern) */
+.form-group select option:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* versi dark tambah pengguna */
+
+body.dark .form-group select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Option hover dalam dark mode */
+body.dark .form-group select option:hover {
+  background-color:#357abd;
+  color: #fff;
+}
+
+/* Akhir Pengguna */
 
 
 @media (max-width: 1000px) {

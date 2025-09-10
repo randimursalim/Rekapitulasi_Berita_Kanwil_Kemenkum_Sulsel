@@ -368,7 +368,50 @@ nav.close ~ .dashboard .top{
     color: var(--text-color);
 }
 
-/* Form input berita */
+.profile-link {
+  border-radius: 50%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+
+/* awal dashboard */
+/* Warna untuk status log aktivitas */
+.data-list.status-tambah {
+  color: #2ecc71 !important; /* hijau terang, tambah */
+  font-weight: 600;
+}
+
+.data-list.status-edit {
+  color: #3498db !important; /* biru, edit */
+  font-weight: 600;
+}
+
+.data-list.status-hapus {
+  color: #e74c3c !important; /* merah, hapus */
+  font-weight: 600;
+}
+
+.data-list.status-login {
+  color: #9b59b6 !important; /* teal, login */
+  font-weight: 600;
+}
+
+.data-list.status-logout {
+  color: #7f8c8d !important; /* abu netral, logout */
+  font-weight: 600;
+}
+
+
+
+
+/* Akhir dashboard */
+
+/* Form input konten / berita */
 
 .form-container {
   background: var(--panel-color);
@@ -435,7 +478,7 @@ body.dark .btn-batal:hover {
   background: var(--primary-color-light);
 }
 
-/* Akhir Form input berita */
+/* Akhir Form input konten / berita */
 
 /* Rekap Berita */
 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Konten - KEMENKUM SULSEL</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav>
+    <div class="logo-name">
+      <div class="logo-image">
+        <img src="images/LOGO KEMENKUM.jpeg" alt="Logo Kemenkum">
+      </div>
+      <span class="logo_name">KEMENKUM SULSEL</span>
+    </div>
+
+    <div class="menu-items">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="uil uil-estate"></i><span class="link-name">Dashboard</span></a></li>
+        <li><a href="input-konten.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Konten</span></a></li>
+        <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
+        <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
+        <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
+      </ul>
+      <ul class="logout-mode">
+        <li><a href="#"><i class="uil uil-signout"></i><span class="link-name">Logout</span></a></li>
+        <li class="mode">
+          <a href="#"><i class="uil uil-moon"></i><span class="link-name">Dark Mode</span></a>
+          <div class="mode-toggle"><span class="switch"></span></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <section class="dashboard">
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+      <img src="images/user.jpg" alt="Profile">
+    </div>
+
+    <div class="dash-content">
+      <div class="overview">
+        <div class="title">
+          <i class="uil uil-edit"></i>
+          <span class="text">Edit Konten</span>
+        </div>
+
+        <!-- Form Edit Konten -->
+        <div class="form-container">
+          <form action="#" method="POST" class="edit-berita-form" autocomplete="off">
+
+            <!-- Pilih Jenis Konten -->
+            <div class="form-group">
+              <label for="jenis">Jenis Konten</label>
+              <select id="jenis" name="jenis" required>
+                <option value="">-- Pilih Jenis --</option>
+                <option value="berita">Berita</option>
+                <option value="instagram">Instagram</option>
+                <option value="youtube">YouTube</option>
+                <option value="tiktok">TikTok</option>
+                <option value="twitter">Twitter (X)</option>
+                <option value="facebook">Facebook</option>
+              </select>
+            </div>
+
+            <!-- Judul -->
+            <div class="form-group">
+              <label for="judul">Judul Konten</label>
+              <input type="text" id="judul" name="judul" value="Judul Lama" required>
+            </div>
+
+            <!-- Form khusus Berita -->
+            <div id="form-berita" style="display:none;">
+              <div class="form-group">
+                <label for="tanggalBerita">Tanggal Berita</label>
+                <input type="date" id="tanggalBerita" name="tanggalBerita" value="2025-09-01">
+              </div>
+              <div class="form-group">
+                <label for="linkBerita">Link Berita</label>
+                <input type="url" id="linkBerita" name="linkBerita" value="https://contoh.com/berita">
+              </div>
+              <div class="form-group">
+                <label for="sumberBerita">Sumber / Media Berita</label>
+                <input type="text" id="sumberBerita" name="sumberBerita" value="Media Lama">
+              </div>
+              <div class="form-group">
+                <label for="ringkasan">Ringkasan Berita</label>
+                <textarea id="ringkasan" name="ringkasan" rows="4">Ringkasan lama berita...</textarea>
+              </div>
+            </div>
+
+            <!-- Form khusus Media Sosial -->
+            <div id="form-medsos" style="display:none;">
+              <div class="form-group">
+                <label for="tanggalPost">Tanggal Posting</label>
+                <input type="date" id="tanggalPost" name="tanggalPost" value="2025-09-02">
+              </div>
+              <div class="form-group">
+                <label for="linkPost">Link Postingan</label>
+                <input type="url" id="linkPost" name="linkPost" value="https://instagram.com/postingan">
+              </div>
+              <div class="form-group">
+                <label for="caption">Deskripsi / Caption</label>
+                <textarea id="caption" name="caption" rows="4">Deskripsi lama konten...</textarea>
+              </div>
+            </div>
+
+            <!-- Tombol -->
+            <div style="text-align:center; margin-top:20px;">
+              <button type="submit" class="btn-simpan">
+                <i class="uil uil-save"></i> Update
+              </button>
+              <button type="button" class="btn-batal" onclick="window.location.href='rekap-berita.html'">
+                <i class="uil uil-times"></i> Batal
+              </button>
+            </div>
+
+          </form>
+        </div>
+        <!-- End Form -->
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Toggle form berdasarkan pilihan jenis konten
+    const jenisSelect = document.getElementById("jenis");
+    const formBerita = document.getElementById("form-berita");
+    const formMedsos = document.getElementById("form-medsos");
+
+    // Saat pertama kali load (misalnya konten adalah berita)
+    if (jenisSelect.value === "berita") {
+      formBerita.style.display = "block";
+      formMedsos.style.display = "none";
+    } else if (jenisSelect.value !== "") {
+      formBerita.style.display = "none";
+      formMedsos.style.display = "block";
+    }
+
+    // Saat ganti pilihan
+    jenisSelect.addEventListener("change", function() {
+      if (this.value === "berita") {
+        formBerita.style.display = "block";
+        formMedsos.style.display = "none";
+      } else if (this.value !== "") {
+        formBerita.style.display = "none";
+        formMedsos.style.display = "block";
+      } else {
+        formBerita.style.display = "none";
+        formMedsos.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

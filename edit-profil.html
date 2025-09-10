@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Pengguna - KEMENKUM SULSEL</title>
+  <title>Edit Profil - KEMENKUM SULSEL</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -23,7 +23,7 @@
         <li><a href="input-konten.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Konten</span></a></li>
         <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
         <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
-        <li><a href="pengguna.html" class="active"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
+        <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
       </ul>
 
       <ul class="logout-mode">
@@ -40,59 +40,52 @@
   <section class="dashboard">
     <div class="top">
       <i class="uil uil-bars sidebar-toggle"></i>
-      <img src="images/user.jpg" alt="Profile">
+      <!-- <img src="images/user.jpg" alt="Profile"> -->
     </div>
 
     <div class="dash-content">
       <div class="overview">
         <div class="title">
-          <i class="uil uil-user"></i>
-          <span class="text">Edit Pengguna</span>
+          <i class="uil uil-user-circle"></i>
+          <span class="text">Edit Profil</span>
         </div>
 
-        <!-- Form Edit Pengguna -->
+        <!-- Form Edit Profil -->
         <div class="form-container">
-          <form action="#" method="POST" class="input-berita-form">
+          <form action="#" method="POST" class="input-berita-form" autocomplete="off" enctype="multipart/form-data">
             <div class="form-group">
               <label for="nama">Nama Lengkap</label>
-              <input type="text" id="nama" name="nama" value="Admin" required>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
             </div>
 
             <div class="form-group">
               <label for="username">Username</label>
-              <input type="text" id="username" name="username" value="admin01" required>
+              <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+            </div>
+
+            <div class="form-group">
+              <label for="foto">Foto Profil</label>
+              <input type="file" id="foto" name="foto" accept="image/*">
+              <small>Jika tidak dipilih, akan tetap menggunakan foto default.</small>
             </div>
 
             <div class="form-group">
               <label for="password">Password Baru</label>
-              <input type="password" id="password" name="password" placeholder="Kosongkan jika tidak diganti">
+              <input type="password" id="password" name="password" placeholder="Masukkan password baru">
             </div>
 
             <div class="form-group">
-              <label for="confirm-password">Konfirmasi Password</label>
-              <input type="password" id="confirm-password" name="confirm-password" placeholder="Ulangi password baru">
+              <label for="konfirmasi">Konfirmasi Password</label>
+              <input type="password" id="konfirmasi" name="konfirmasi" placeholder="Ulangi password baru">
             </div>
 
-            <div class="form-group">
-              <label for="role">Role</label>
-              <select id="role" name="role" required>
-                <option value="Admin" selected>Admin</option>
-                <option value="Operator">Operator</option>
-                <option value="Staff">Staff</option>
-              </select>
-            </div>
-
-           <div style="text-align:center; margin-top:20px;">
-              <button type="submit" class="btn-simpan">
-                <i class="uil uil-save"></i> Update
-              </button>
-              <button type="button" class="btn-batal" onclick="window.location.href='rekap-berita.html'">
-                <i class="uil uil-times"></i> Batal
-              </button>
+            <div style="text-align:center; margin-top:20px;">
+              <button type="submit" class="btn-simpan"><i class="uil uil-save"></i> Simpan</button>
+              <button type="button" class="btn-batal" onclick="window.location.href='index.html'"><i class="uil uil-times"></i> Batal</button>
             </div>
           </form>
         </div>
-
+        <!-- End Form -->
       </div>
     </div>
   </section>

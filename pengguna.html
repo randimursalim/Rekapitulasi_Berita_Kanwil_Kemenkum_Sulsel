@@ -24,6 +24,7 @@
         <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
         <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
         <li><a href="pengguna.html" class="active"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
+        <li><a href="jadwal-kegiatan.html" class="active"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
       </ul>
 
       <ul class="logout-mode">
@@ -40,7 +41,13 @@
   <section class="dashboard">
     <div class="top">
       <i class="uil uil-bars sidebar-toggle"></i>
-      <img src="images/user.jpg" alt="Profile">
+       <div class="search-box">
+        <i class="uil uil-search"></i>
+        <input type="text" placeholder="Cari Pengguna">
+      </div>
+        <a href="edit-profil.html">
+         <img src="images/user.jpg" alt="Profile" class="profile-link">
+        </a>
     </div>
 
     <div class="dash-content">
@@ -105,7 +112,7 @@
 
         <!-- Tombol tambah pengguna -->
         <div style="margin-top:20px; text-align:right;">
-          <button class="btn-simpan" onclick="window.location.href='tambah-pengguna.html'">
+          <button class="btn-tambah" onclick="window.location.href='tambah-pengguna.html'">
   <i class="uil uil-plus"></i> Tambah Pengguna
 </button>
 

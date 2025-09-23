@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arsip - KEMENKUM SULSEL</title>
+  <title>Jadwal Kegiatan - KEMENKUM SULSEL</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -22,7 +22,7 @@
         <li><a href="index.html"><i class="uil uil-estate"></i><span class="link-name">Dashboard</span></a></li>
         <li><a href="input-konten.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Konten</span></a></li>
         <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
-        <li><a href="arsip.html" class="active"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
+        <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
         <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
         <li><a href="jadwal-kegiatan.html" class="active"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
       </ul>
@@ -43,7 +43,7 @@
       <i class="uil uil-bars sidebar-toggle"></i>
       <div class="search-box">
         <i class="uil uil-search"></i>
-        <input type="text" placeholder="Cari Berita">
+        <input type="text" placeholder="Cari Kegiatan">
       </div>
       <a href="edit-profil.html">
         <img src="images/user.jpg" alt="Profile" class="profile-link">
@@ -53,68 +53,82 @@
     <div class="dash-content">
       <div class="overview">
         <div class="title">
-          <i class="uil uil-archive"></i>
-          <span class="text">Arsip Berita</span>
+          <i class="uil uil-schedule"></i>
+          <span class="text">Jadwal Kegiatan</span>
         </div>
 
-        <!-- Filter tanggal -->
-        <div class="filters">
-          <input type="date" id="startDate">
-          <span>-</span>
-          <input type="date" id="endDate">
-          <button id="filterBtn">Terapkan</button>
-          <button id="resetBtn">Reset</button>
+        <!-- Tombol Tambah -->
+        <div class="btn-container" style="margin: 15px 0;">
+          <button class="btn-tambah" onclick="window.location.href='tambah-kegiatan.html'">
+            <i class="uil uil-plus"></i> Tambah Kegiatan
+          </button>
         </div>
 
-        <!-- Arsip (tabel gaya activity-data) -->
-        <div class="activity" style="margin-top:20px;">
+        <!-- Tabel Jadwal Kegiatan -->
+        <div class="activity" style="margin-top: 20px;">
           <div class="activity-data">
+
             <div class="data no">
               <span class="data-title">No</span>
               <span class="data-list">1</span>
               <span class="data-list">2</span>
               <span class="data-list">3</span>
+              <span class="data-list">4</span>
             </div>
 
-            <div class="data title-news">
-              <span class="data-title">Judul</span>
-              <span class="data-list">Kakanwil Kemenkum Sulsel Pimpin Rapat</span>
-              <span class="data-list">Kanwil Kemenkum Sulsel Ucapkan Selamat Memperingati Maulid Nabi Muhammad SAW 1447 H</span>
-              <span class="data-list">Kakanwil Andi Basmal Apresiasi Jajaran Raih Capaian Tuntaskan Data Dukung Rencana Aksi B08</span>
+            <div class="data kegiatan">
+              <span class="data-title">Nama Kegiatan</span>
+              <span class="data-list">Rapat Koordinasi Bulanan</span>
+              <span class="data-list">Sosialisasi Layanan Hukum</span>
+              <span class="data-list">Workshop Digitalisasi</span>
+              <span class="data-list">Rapat Sosialisasi</span>
             </div>
 
-            <div class="data date">
+            <div class="data tanggal">
               <span class="data-title">Tanggal</span>
-              <span class="data-list">2025-08-29</span>
-              <span class="data-list">2025-08-25</span>
-              <span class="data-list">2025-08-20</span>
+              <span class="data-list">2025-09-30</span>
+              <span class="data-list">2025-10-05</span>
+              <span class="data-list">2025-10-10</span>
+              <span class="data-list">2025-10-11</span>
             </div>
 
-            <div class="data source">
-              <span class="data-title">Sumber</span>
-              <span class="data-list">Contoh Media</span>
-              <span class="data-list">Kabar Makassar</span>
-              <span class="data-list">Sulsel Satu</span>
+            <div class="data waktu">
+              <span class="data-title">Waktu</span>
+              <span class="data-list">09.00-10.00</span>
+              <span class="data-list">13.00-14.00</span>
+              <span class="data-list">10.00-11.00</span>
+              <span class="data-list">18.00-19.00</span>
+            </div>
+
+
+            <div class="data status">
+              <span class="data-title">Status</span>
+              <span class="data-list status-selesai">Selesai</span>
+              <span class="data-list status-ditunda">Ditunda</span>
+              <span class="data-list status-dibatalkan">Dibatalkan</span>
+              <span class="data-list status-belum">Belum Dimulai</span>
             </div>
 
             <div class="data actions">
               <span class="data-title">Aksi</span>
               <span class="data-list">
-                <button class="btn-action-aksi view"><i class="uil uil-eye"></i></button>
-                <button class="btn-action-aksi edit" onclick="window.location.href='edit-konten.html'"><i class="uil uil-edit"></i></button>
-                <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
-              </span>
-              <span class="data-list">
-                <button class="btn-action-aksi view"><i class="uil uil-eye"></i></button>
                 <button class="btn-action-aksi edit"><i class="uil uil-edit"></i></button>
                 <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
               </span>
               <span class="data-list">
-                <button class="btn-action-aksi view"><i class="uil uil-eye"></i></button>
+                <button class="btn-action-aksi edit"><i class="uil uil-edit"></i></button>
+                <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
+              </span>
+              <span class="data-list">
+                <button class="btn-action-aksi edit"><i class="uil uil-edit"></i></button>
+                <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
+              </span>
+              <span class="data-list">
                 <button class="btn-action-aksi edit"><i class="uil uil-edit"></i></button>
                 <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
               </span>
             </div>
+
           </div>
         </div>
 
@@ -130,40 +144,5 @@
   </section>
 
   <script src="script.js"></script>
-  <script>
-    const filterBtn = document.getElementById("filterBtn");
-    const resetBtn = document.getElementById("resetBtn");
-    const startDateInput = document.getElementById("startDate");
-    const endDateInput = document.getElementById("endDate");
-
-    filterBtn.addEventListener("click", () => {
-      let startDate = new Date(startDateInput.value);
-      let endDate = new Date(endDateInput.value);
-
-      if (!startDateInput.value || !endDateInput.value) {
-        alert("Pilih rentang tanggal dulu!");
-        return;
-      }
-
-      document.querySelectorAll(".activity-data .data.date .data-list").forEach((el, idx) => {
-        let rowDate = new Date(el.innerText);
-        if (rowDate >= startDate && rowDate <= endDate) {
-          // tetap tampil
-        } else {
-          document.querySelectorAll(".activity-data .data").forEach(col => {
-            col.children[idx+1].style.display = "none";
-          });
-        }
-      });
-    });
-
-    resetBtn.addEventListener("click", () => {
-      startDateInput.value = "";
-      endDateInput.value = "";
-      document.querySelectorAll(".activity-data .data .data-list").forEach(el => {
-        el.style.display = "";
-      });
-    });
-  </script>
 </body>
 </html>

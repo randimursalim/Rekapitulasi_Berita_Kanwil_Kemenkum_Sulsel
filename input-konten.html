@@ -24,6 +24,7 @@
         <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
         <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
         <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
+        <li><a href="jadwal-kegiatan.html" class="active"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
       </ul>
       <ul class="logout-mode">
         <li><a href="#"><i class="uil uil-signout"></i><span class="link-name">Logout</span></a></li>
@@ -39,7 +40,9 @@
   <section class="dashboard">
     <div class="top">
       <i class="uil uil-bars sidebar-toggle"></i>
-      <img src="images/user.jpg" alt="Profile">
+       <a href="edit-profil.html">
+         <img src="images/user.jpg" alt="Profile" class="profile-link">
+       </a>
     </div>
 
     <div class="dash-content">
@@ -51,7 +54,7 @@
 
         <!-- Form Input Konten -->
         <div class="form-container">
-          <form action="#" method="POST" class="input-berita-form" autocomplete="off">
+          <form action="#" method="POST" class="input-berita-form" autocomplete="off" enctype="multipart/form-data">
 
             <!-- Pilih Jenis Konten -->
             <div class="form-group">
@@ -107,6 +110,23 @@
                 <label for="caption">Deskripsi / Caption</label>
                 <textarea id="caption" name="caption" rows="4" placeholder="Tuliskan deskripsi atau caption..."></textarea>
               </div>
+            </div>
+
+            <!-- Dokumentasi -->
+            <div class="form-group">
+              <label for="dokumentasi">Dokumentasi (Opsional)</label>
+              <input type="file" id="dokumentasi" name="dokumentasi" accept="image/*">
+            </div>
+
+            <!-- Divisi / Bagian -->
+            <div class="form-group">
+              <label for="divisi">Divisi / Bagian</label>
+              <select id="divisi" name="divisi" required>
+                <option value="">-- Pilih Divisi --</option>
+                <option value="ppu">Peraturan Perundang-undangan dan Pembinaan Hukum</option>
+                <option value="pelayanan">Pelayanan Hukum</option>
+                <option value="umum">Umum</option>
+              </select>
             </div>
 
             <!-- Tombol -->

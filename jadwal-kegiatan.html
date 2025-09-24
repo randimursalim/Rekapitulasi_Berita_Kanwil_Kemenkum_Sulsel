@@ -21,10 +21,10 @@
       <ul class="nav-links">
         <li><a href="index.html"><i class="uil uil-estate"></i><span class="link-name">Dashboard</span></a></li>
         <li><a href="input-konten.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Konten</span></a></li>
-        <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Berita</span></a></li>
+        <li><a href="rekap-konten.html"><i class="uil uil-database"></i><span class="link-name">Rekap Konten</span></a></li>
         <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
-        <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
         <li><a href="jadwal-kegiatan.html" class="active"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
+        <li><a href="pengguna.html"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
       </ul>
 
       <ul class="logout-mode">
@@ -56,6 +56,8 @@
           <i class="uil uil-schedule"></i>
           <span class="text">Jadwal Kegiatan</span>
         </div>
+
+        
 
         <!-- Tombol Tambah -->
         <div class="btn-container" style="margin: 15px 0;">
@@ -100,7 +102,6 @@
               <span class="data-list">18.00-19.00</span>
             </div>
 
-
             <div class="data status">
               <span class="data-title">Status</span>
               <span class="data-list status-selesai">Selesai</span>
@@ -112,7 +113,7 @@
             <div class="data actions">
               <span class="data-title">Aksi</span>
               <span class="data-list">
-                <button class="btn-action-aksi edit"><i class="uil uil-edit"></i></button>
+                <button class="btn-action-aksi edit" onclick="window.location.href='edit-kegiatan.html'"><i class="uil uil-edit" ></i></button>
                 <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
               </span>
               <span class="data-list">
@@ -144,5 +145,49 @@
   </section>
 
   <script src="script.js"></script>
+  <script>
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   const dataKegiatan = JSON.parse(localStorage.getItem("jadwalKegiatan")) || [];
+
+  //   if (dataKegiatan.length > 0) {
+  //     const kegiatanContainer = document.querySelector(".activity-data");
+
+  //     dataKegiatan.forEach((item, index) => {
+  //       // buat elemen baru untuk setiap kolom
+  //       kegiatanContainer.querySelector(".no").innerHTML += `<span class="data-list">${index + 1}</span>`;
+  //       kegiatanContainer.querySelector(".kegiatan").innerHTML += `<span class="data-list">${item.nama}</span>`;
+  //       kegiatanContainer.querySelector(".tanggal").innerHTML += `<span class="data-list">${item.tanggal}</span>`;
+  //       kegiatanContainer.querySelector(".waktu").innerHTML += `<span class="data-list">${item.waktu}</span>`;
+  //       kegiatanContainer.querySelector(".status").innerHTML += `<span class="data-list status-${item.status.toLowerCase().replace(" ", "-")}">${item.status}</span>`;
+  //       kegiatanContainer.querySelector(".actions").innerHTML += `
+  //         <span class="data-list">
+  //           <button class="btn-action-aksi edit"><i class="uil uil-edit"></i></button>
+  //           <button class="btn-action-aksi delete"><i class="uil uil-trash-alt"></i></button>
+  //         </span>
+  //       `;
+  //     });
+  //   }
+  // });
+
+  // // cari semua tombol hapus
+  // document.querySelectorAll(".uil uil-trash-alt").forEach(button => {
+  //   button.addEventListener("click", function() {
+  //     if (confirm("Yakin mau hapus kegiatan ini?")) {
+  //       // ambil parent .data-list dari tombol
+  //       const listItem = this.closest(".data-list");
+
+  //       // cari semua kolom dengan index yang sama
+  //       const index = Array.from(listItem.parentElement.children).indexOf(listItem);
+
+  //       document.querySelectorAll(".activity-data .data").forEach(col => {
+  //         col.children[index].remove(); // hapus data di kolom yang sama
+  //       });
+  //     }
+  //   });
+  // });
+
+
+</script>
+
 </body>
 </html>

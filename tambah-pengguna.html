@@ -6,6 +6,9 @@
   <title>Tambah Pengguna - KEMENKUM SULSEL</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <style>
+    
+  </style>
 </head>
 <body>
   <!-- Sidebar -->
@@ -23,7 +26,7 @@
         <li><a href="input-konten.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Konten</span></a></li>
         <li><a href="rekap-berita.html"><i class="uil uil-database"></i><span class="link-name">Rekap Konten</span></a></li>
         <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
-        <li><a href="jadwal-kegiatan.html" class="active"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
+        <li><a href="jadwal-kegiatan.html"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
         <li><a href="pengguna.html" class="active"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
       </ul>
 
@@ -41,7 +44,9 @@
   <section class="dashboard">
     <div class="top">
       <i class="uil uil-bars sidebar-toggle"></i>
-      <img src="images/user.jpg" alt="Profile">
+      <a href="edit-profil.html">
+        <img src="images/user.jpg" alt="Profile" class="profile-link">
+      </a>
     </div>
 
     <div class="dash-content">
@@ -53,7 +58,16 @@
 
         <!-- Form Tambah Pengguna -->
         <div class="form-container">
-          <form action="#" method="POST" class="input-berita-form" autocomplete="off">
+          <form action="#" method="POST" class="input-berita-form" autocomplete="off" enctype="multipart/form-data">
+
+            <!-- Upload Foto -->
+            <div class="upload-container">
+              <img id="previewImage" src="images/user.jpg" alt="Preview Foto">
+              <br>
+              <label for="foto"><i class="uil uil-image-plus"></i> Upload Foto</label>
+              <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+
             <div class="form-group">
               <label for="nama">Nama Lengkap</label>
               <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
@@ -80,8 +94,7 @@
               <select id="role" name="role" required>
                 <option value="">-- Pilih Role --</option>
                 <option value="Admin">Admin</option>
-                <option value="Operator">Operator</option>
-                <option value="Staff">Staff</option>
+                <option value="Operator">User</option>
               </select>
             </div>
 
@@ -100,6 +113,22 @@
     </div>
   </section>
 
+  <script>
+    // Preview gambar sebelum upload
+    const fotoInput = document.getElementById('foto');
+    const preview = document.getElementById('previewImage');
+
+    fotoInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -54,7 +54,7 @@
         </div>
 
         <!-- Form Tambah Kegiatan -->
-        <form action="#" method="post" class="input-berita-form" autocomplete="off">
+        <form id="formKegiatan" class="input-berita-form" autocomplete="off">
           <div class="form-group">
             <label for="namaKegiatan">Nama Kegiatan</label>
             <input type="text" id="namaKegiatan" name="namaKegiatan" placeholder="Masukkan nama kegiatan" required>
@@ -64,11 +64,6 @@
             <label for="tanggal">Tanggal</label>
             <input type="date" id="tanggal" name="tanggal" required>
           </div>
-
-          <!-- <div class="form-group">
-            <label for="waktu">Waktu</label>
-            <input type="text" id="waktu" name="waktu" placeholder="Contoh: 09.00 - 11.00" required>
-          </div> -->
 
           <div class="form-group">
             <label for="jamMulai">Jam Mulai</label>
@@ -80,6 +75,10 @@
             <input type="time" id="jamSelesai" name="jamSelesai" required>
           </div>
 
+          <div class="form-group">
+            <label for="keterangan">Keterangan</label>
+            <textarea id="keterangan" name="keterangan" rows="3" placeholder="Masukkan keterangan kegiatan, misalnya peserta, tujuan, hasil rapat, dll" required></textarea>
+          </div>
 
           <div class="form-group">
             <label for="status">Status</label>
@@ -93,7 +92,7 @@
           </div>
 
           <!-- Tombol Aksi -->
-          <div style="text-align:center; margin-top:20px;" class="form-actions">
+          <div class="form-actions" style="text-align:center; margin-top:20px;">
             <button type="submit" class="btn-simpan">
               <i class="uil uil-save"></i> Simpan
             </button>
@@ -107,44 +106,35 @@
   </section>
 
   <script src="script.js"></script>
- <script>
-  // Konversi ke format 24 jam dengan titik (08.00)
-  function to24HourFormat(timeStr) {
-    const [hour, minute] = timeStr.split(":");
-    return hour.padStart(2, "0") + "." + minute.padStart(2, "0");
-  }
+  <script>
+    function to24HourFormat(timeStr) {
+      const [hour, minute] = timeStr.split(":");
+      return hour.padStart(2, "0") + "." + minute.padStart(2, "0");
+    }
 
-//   document.querySelector("form").addEventListener("submit", function(e) {
-//     e.preventDefault();
+    document.getElementById("formKegiatan").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-//     const mulai = document.getElementById("jamMulai").value;
-//     const selesai = document.getElementById("jamSelesai").value;
+      const nama = document.getElementById("namaKegiatan").value.trim();
+      const tanggal = document.getElementById("tanggal").value;
+      const jamMulai = document.getElementById("jamMulai").value;
+      const jamSelesai = document.getElementById("jamSelesai").value;
+      const keterangan = document.getElementById("keterangan").value.trim();
+      const status = document.getElementById("status").value;
 
-//     const mulai24 = to24HourFormat(mulai);
-//     const selesai24 = to24HourFormat(selesai);
+      const waktuGabung = `${to24HourFormat(jamMulai)}-${to24HourFormat(jamSelesai)}`;
 
-//     const waktuGabung = `${mulai24}-${selesai24}`;
+      // Simpan ke localStorage (sementara sebelum pakai database)
+      const kegiatanBaru = { nama, tanggal, waktu: waktuGabung, keterangan, status };
 
-//     // // Simpan ke localStorage biar bisa tampil di jadwal-kegiatan.html
-//     // const kegiatanBaru = {
-//     //   nama: document.getElementById("namaKegiatan").value,
-//     //   tanggal: document.getElementById("tanggal").value,
-//     //   waktu: waktuGabung,
-//     //   status: document.getElementById("status").value
-//     // };
+      let dataKegiatan = JSON.parse(localStorage.getItem("jadwalKegiatan")) || [];
+      dataKegiatan.push(kegiatanBaru);
 
-//     // // ambil data lama
-//     // let dataKegiatan = JSON.parse(localStorage.getItem("jadwalKegiatan")) || [];
-//     // dataKegiatan.push(kegiatanBaru);
+      localStorage.setItem("jadwalKegiatan", JSON.stringify(dataKegiatan));
 
-//     // // simpan kembali
-//     // localStorage.setItem("jadwalKegiatan", JSON.stringify(dataKegiatan));
-
-//     // // pindah ke jadwal-kegiatan.html
-//     // window.location.href = "jadwal-kegiatan.html";
-//   });
-</script>
-
-  
+      alert("Kegiatan berhasil disimpan!");
+      window.location.href = "jadwal-kegiatan.html";
+    });
+  </script>
 </body>
 </html>

@@ -549,6 +549,7 @@ body.dark .btn-tambah:hover {
 }
 
 /* Ringkasan Berita - Dark Mode */
+body.dark #keterangan, 
 body.dark #ringkasan, 
 body.dark #caption {
   background-color: #2c2c2c;   /* abu gelap */
@@ -556,6 +557,7 @@ body.dark #caption {
   border: 1px solid #444;      /* border lebih lembut */
 }
 
+body.dark #keterangan::placeholder,
 body.dark #ringkasan::placeholder,
 body.dark #caption::placeholder {
   color: #aaa; /* warna placeholder lebih redup */
@@ -913,7 +915,40 @@ body.dark .filters span {
   color: #fff;
 }
 
+/* foto */
+.upload-container {
+  text-align: center;
+  margin: 20px 0;
+}
+.upload-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+.upload-container label {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.upload-container label:hover {
+  background-color: #0077ff;
+}
+.upload-container input[type="file"] {
+  display: none;
+}
+
 /* versi dark tambah pengguna */
+
+body.dark .upload-container label:hover {
+  background: var(--primary-color-light);
+}
 
 body.dark .form-group select:hover {
   border-color: var(--primary-color);

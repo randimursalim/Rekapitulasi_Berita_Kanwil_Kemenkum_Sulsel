@@ -23,7 +23,7 @@
         <li><a href="input-konten.html"><i class="uil uil-file-plus"></i><span class="link-name">Input Konten</span></a></li>
         <li><a href="rekap-konten.html"><i class="uil uil-database"></i><span class="link-name">Rekap Konten</span></a></li>
         <li><a href="arsip.html"><i class="uil uil-archive"></i><span class="link-name">Arsip</span></a></li>
-        <li><a href="jadwal-kegiatan.html" class="active"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
+        <li><a href="jadwal-kegiatan.html"><i class="uil uil-schedule"></i><span class="link-name">Jadwal Kegiatan</span></a></li>
         <li><a href="pengguna.html" class="active"><i class="uil uil-users-alt"></i><span class="link-name">Pengguna</span></a></li>
       </ul>
 
@@ -49,13 +49,22 @@
     <div class="dash-content">
       <div class="overview">
         <div class="title">
-          <i class="uil uil-user"></i>
+          <i class="uil uil-edit"></i>
           <span class="text">Edit Pengguna</span>
         </div>
 
         <!-- Form Edit Pengguna -->
         <div class="form-container">
-          <form action="#" method="POST" class="input-berita-form">
+          <form action="#" method="POST" class="input-berita-form" autocomplete="off" enctype="multipart/form-data">
+            
+            <!-- Upload Foto -->
+            <div class="upload-container">
+              <img id="previewImage" src="images/user.jpg" alt="Preview Foto">
+              <br>
+              <label for="foto"><i class="uil uil-image-plus"></i> Ubah Foto</label>
+              <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+
             <div class="form-group">
               <label for="nama">Nama Lengkap</label>
               <input type="text" id="nama" name="nama" value="Admin" required>
@@ -80,26 +89,41 @@
               <label for="role">Role</label>
               <select id="role" name="role" required>
                 <option value="Admin" selected>Admin</option>
-                <option value="Operator">Operator</option>
-                <option value="Staff">Staff</option>
+                <option value="Operator">User</option>
               </select>
             </div>
 
-           <div style="text-align:center; margin-top:20px;">
+            <div style="text-align:center; margin-top:20px;">
               <button type="submit" class="btn-simpan">
                 <i class="uil uil-save"></i> Update
               </button>
-              <button type="button" class="btn-batal" onclick="window.location.href='rekap-berita.html'">
+              <button type="button" class="btn-batal" onclick="window.location.href='pengguna.html'">
                 <i class="uil uil-times"></i> Batal
               </button>
             </div>
           </form>
         </div>
-
+        <!-- End Form -->
       </div>
     </div>
   </section>
 
+  <script>
+    // Preview gambar sebelum upload
+    const fotoInput = document.getElementById('foto');
+    const preview = document.getElementById('previewImage');
+
+    fotoInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

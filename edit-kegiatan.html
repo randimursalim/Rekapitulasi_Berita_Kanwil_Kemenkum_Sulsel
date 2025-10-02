@@ -55,7 +55,7 @@
 
         <!-- Form Edit Kegiatan -->
         <form action="update-kegiatan.php" method="post" class="input-berita-form" autocomplete="off">
-          <!-- Hidden ID untuk identifikasi kegiatan -->
+          <!-- Hidden ID -->
           <input type="hidden" id="idKegiatan" name="idKegiatan" value="1">
 
           <div class="form-group">
@@ -81,11 +81,16 @@
           <div class="form-group">
             <label for="status">Status</label>
             <select id="status" name="status" required>
+              <option value="Belum Dimulai" selected>Belum Dimulai</option>
               <option value="Selesai">Selesai</option>
               <option value="Ditunda">Ditunda</option>
               <option value="Dibatalkan">Dibatalkan</option>
-              <option value="Belum Dimulai" selected>Belum Dimulai</option>
             </select>
+          </div>
+
+          <div class="form-group">
+            <label for="keterangan">Keterangan</label>
+            <textarea id="keterangan" name="keterangan" rows="5" placeholder="Masukkan detail kegiatan (misal: kegiatan dihadiri oleh..., membahas tentang...)" required>Rapat ini membahas koordinasi pelaksanaan kegiatan bulanan, dihadiri oleh seluruh staf humas.</textarea>
           </div>
 
           <!-- Tombol Aksi -->
